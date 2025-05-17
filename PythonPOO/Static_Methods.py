@@ -21,3 +21,25 @@ print(Employee.is_valid_position("Doctor"))
 print(employee1.get_info())
 print(employee2.get_info())
 print(employee3.get_info())
+
+
+#Ejemplo 2 
+
+class Calculadora:
+    @staticmethod
+    def sumar(*args):
+        sum = 0
+        for i in args:
+            sum+= i
+        print(sum)
+
+    @staticmethod
+    def multiplicar(*args):
+        mult = 1
+        for i in args:
+            mult = mult*i
+        print(mult)
+
+Calculadora.sumar(1,2,3)
+Calculadora.multiplicar(5,4)
+
