@@ -57,10 +57,21 @@ class Auto(Vehiculo):
     def necesita_mantenimiento(self):
         return self.km_recorridos >= 10000
 
+#Subclase moto
+class Moto(Vehiculo):
+    def __init__(self, marca, modelo, combustible_actual, eficiencia):
+        super().__init__(marca, modelo, combustible_actual)
+        self.eficiencia = eficiencia  # km/litro
+        self.revisiones = 2  # cantidad de revisiones hechas
 
-carrito = Auto("ford", "raptor", 120, 5, 5000)
+    def obtener_tipo(self):
+        return "Moto"
 
-#Subclase 
+    def calcular_autonomia(self):
+        return self.combustible_actual * self.eficiencia
+
+    def necesita_mantenimiento(self):
+        return self.revisiones < 1
 
 
 

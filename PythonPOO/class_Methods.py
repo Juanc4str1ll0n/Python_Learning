@@ -1,6 +1,9 @@
 #class methods --> Allow operations related to the class itself
 #                   take cls as the first parameter, which represents the class itself
 
+# Es un método que no trabaja con una instancia individual, sino con la clase en general. 
+# En lugar de recibir self (que representa un objeto individual), recibe cls, que representa la clase entera.
+
 class Student:
 
     count = 0

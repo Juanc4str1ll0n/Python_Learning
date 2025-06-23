@@ -13,7 +13,7 @@ class Animal:
         print(f"{self.name} is sleeping")
 
     def eat(self):
-        print(f"{self.name}is eatimg ")
+        print(f"{self.name} is eatimg ")
 
 
 
@@ -44,3 +44,4 @@ fish = Fish("Larry")
 rabbit.flee()
 fish.hunt()
 hawk.eat()
+

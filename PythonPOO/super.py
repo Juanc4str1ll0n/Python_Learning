@@ -7,7 +7,7 @@ class Shape:
         self.is_filled = is_filled
 
     def describe(self):
-        print(f"It is {self.color} and {'filled' if self.is_filled else 'not_filled'}")
+        print(f"It is {self.color} and {'filled' if self.is_filled else 'not filled'}")
 
 class Circle(Shape):
     def __init__(self, color, is_filled, radius):
