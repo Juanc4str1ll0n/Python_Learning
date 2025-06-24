@@ -43,3 +43,6 @@ class Calculadora:
 Calculadora.sumar(1,2,3)
 Calculadora.multiplicar(5,4)
 
+calculadorcita = Calculadora()
+
+calculadorcita.multiplicar(3,2,1)
