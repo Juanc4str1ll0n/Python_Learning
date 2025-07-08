@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel
+# from PyQt5.QtWidgets import *
 
 def saludar():
     etiqueta.setText("¡Hola desde PyQt5!")
