@@ -86,20 +86,71 @@ class LinkedList:
                 copia = copia.siguiente
             return aux
 
+    def eliminarNodo(self, num):
+        """Elimina un nodo en especifico"""
+        if num >= 0:
+            if self.cabeza == None:
+                print("La lista esta vacia")
+                return
+            elif num == 0:
+                self.cabeza = self.cabeza.siguiente
+                return
+            else:
+                anterior = self.cabeza
+                actual = self.cabeza.siguiente
+                aux = 1
+                count = num
+
+                while aux <= count:
+                    if aux == num:
+                        anterior.siguiente = actual.siguiente
+                        return
+                    else:
+                        aux += 1
+                        anterior = actual
+                        actual = actual.siguiente 
+                        print("intento")
+        else:
+            print("Nodo no valido, empieza desde cero en adelante")
+            return
+        
+        print("No se encontro el nodo")
+        
+    def buscar(self, id):
+        
+        if self.cabeza == None:
+            print("La lista esta vacia")
+            return
+        
+        elif id == 0:
+            return self.cabeza
+        
+        else:
+            return
 
 
-# Estudiantes = LinkedList()
 
-# Estudiantes.agregar("Juan David")
-# Estudiantes.agregar("Daniel Felipe")
-# Estudiantes.agregar("Samuel David")
-# Estudiantes.agregar("Valery Juliana")
-# Estudiantes.agregar_al_principio("Deivid malagan")
+        
+            
+       
 
-# Estudiantes.imprimir()
 
-# Estudiantes.eliminar("Daniel Felipe")
-# Estudiantes.imprimir()
+Estudiantes = LinkedList()
+
+Estudiantes.agregar("Juan David")
+Estudiantes.agregar("Daniel Felipe")
+Estudiantes.agregar("Samuel David")
+Estudiantes.agregar("Valery Juliana")
+Estudiantes.agregar("Michael Jackson")
+Estudiantes.agregar("Diddy")
+Estudiantes.agregar_al_principio("Deivid malagan")
+
+Estudiantes.imprimir()
+
+Estudiantes.eliminar("Daniel Felipe")
+Estudiantes.imprimir()
+Estudiantes.eliminarNodo(9)
+Estudiantes.imprimir()
 
 # print(Estudiantes.longitud())
 
