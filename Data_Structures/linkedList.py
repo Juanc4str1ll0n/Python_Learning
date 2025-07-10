@@ -102,38 +102,84 @@ class LinkedList:
                 count = num
 
                 while aux <= count:
-                    if aux == num:
-                        anterior.siguiente = actual.siguiente
+                    try:
+                        if aux == num:
+                            anterior.siguiente = actual.siguiente
+                            return
+                        else:
+                            aux += 1
+                            anterior = actual
+                            actual = actual.siguiente 
+                    except AttributeError :
+                        print("Error: No existe el nodo ", num)
                         return
-                    else:
-                        aux += 1
-                        anterior = actual
-                        actual = actual.siguiente 
-                        print("intento")
+                    finally:  
+                        pass                    
         else:
             print("Nodo no valido, empieza desde cero en adelante")
             return
         
-        print("No se encontro el nodo")
-        
     def buscar(self, id):
-        
+        """Buscar dato por id, los id inician en cero"""
+        count = id 
+        aux = 0
+        actual = self.cabeza
+
         if self.cabeza == None:
             print("La lista esta vacia")
             return
         
         elif id == 0:
-            return self.cabeza
+            return self.cabeza.dato
         
         else:
+            try:
+                while aux < count:
+                    aux +=1
+                    actual = actual.siguiente
+                return actual.dato
+            except AttributeError:
+                return "Error, id no existe"
+            
+    def obtener_id(self, dato):
+        """Devuelve el índice del primer nodo que contenga el dato, o -1 si no se encuentra"""
+        
+        if self.cabeza is None:
+            print("Error, la lista está vacía")
             return
 
+        copia = self.cabeza
+        aux = 0
 
+        while copia:
+            if copia.dato == dato:
+                return aux
+            copia = copia.siguiente
+            aux += 1
 
+        return "Error, no se encontro el dato"
+
+    def editarDato_id(self, dato, id):
+        """Edita un dato de la lista por el id del nodo
+            dos parametros, el id y el nodo"""
+
+        actual = self.cabeza
+        aux = 0
+        count = id
+
+        if self.cabeza == None:
+            print("La lista esta vacia ")
+            return
         
+        while actual:
+            if aux == count:
+                actual.dato = dato
+                return
+            aux +=1
+            actual = actual.siguiente
+        print("No se encontro el dato con id ", id)
             
-       
-
+   
 
 Estudiantes = LinkedList()
 
@@ -149,9 +195,14 @@ Estudiantes.imprimir()
 
 Estudiantes.eliminar("Daniel Felipe")
 Estudiantes.imprimir()
-Estudiantes.eliminarNodo(9)
+print(Estudiantes.longitud())
+Estudiantes.eliminarNodo(1)
 Estudiantes.imprimir()
-
+print(Estudiantes.longitud())
+print(Estudiantes.buscar(4))
+print(Estudiantes.obtener_id("Diddy"))
+print(Estudiantes.editarDato_id("Epstein", 4))
+Estudiantes.imprimir()
 # print(Estudiantes.longitud())
 
 #Para entender que cada Nodo lo puedo crear y que cada nodo tiene
