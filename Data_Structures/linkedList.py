@@ -159,7 +159,7 @@ class LinkedList:
 
         return "Error, no se encontro el dato"
 
-    def editarDato_id(self, dato, id):
+    def editarDato_id(self, dato, id : int):
         """Edita un dato de la lista por el id del nodo
             dos parametros, el id y el nodo"""
 
@@ -178,7 +178,9 @@ class LinkedList:
             aux +=1
             actual = actual.siguiente
         print("No se encontro el dato con id ", id)
-            
+
+if __name__ == '__main__':
+    LinkedList()          
    
 
 Estudiantes = LinkedList()
