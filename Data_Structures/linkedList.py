@@ -58,6 +58,10 @@ class LinkedList:
             self.cabeza = self.cabeza.siguiente
             return
         
+        if self.cabeza.siguiente is None:
+            print("El dato no se encontró en la lista")
+            return
+        
         #Iterar hasta encontrar el dato
         #Creamos dos variables aux, la primera es la cabeza y la otra es el segundo dato
         anterior = self.cabeza
@@ -178,49 +182,34 @@ class LinkedList:
             aux +=1
             actual = actual.siguiente
         print("No se encontro el dato con id ", id)
+        
+    def vaciar(self):
+        self.cabeza = None
 
 if __name__ == '__main__':
-    LinkedList()          
-   
+    Estudiantes = LinkedList()
 
-Estudiantes = LinkedList()
+    Estudiantes.agregar("Juan David")
+    Estudiantes.agregar("Daniel Felipe")
+    Estudiantes.agregar("Samuel David")
+    Estudiantes.agregar("Valery Juliana")
+    Estudiantes.agregar("Michael Jackson")
+    Estudiantes.agregar("Diddy")
+    Estudiantes.agregar_al_principio("Deivid malagan")
 
-Estudiantes.agregar("Juan David")
-Estudiantes.agregar("Daniel Felipe")
-Estudiantes.agregar("Samuel David")
-Estudiantes.agregar("Valery Juliana")
-Estudiantes.agregar("Michael Jackson")
-Estudiantes.agregar("Diddy")
-Estudiantes.agregar_al_principio("Deivid malagan")
+    Estudiantes.imprimir()
 
-Estudiantes.imprimir()
+    Estudiantes.eliminar("Daniel Felipe")
+    Estudiantes.imprimir()
+    print(Estudiantes.longitud())
+    Estudiantes.eliminarNodo(1)
+    Estudiantes.imprimir()
+    print(Estudiantes.longitud())
+    print(Estudiantes.buscar(4))
+    print(Estudiantes.obtener_id("Diddy"))
+    Estudiantes.editarDato_id("Epstein", 4)
+    Estudiantes.imprimir()
+    print(Estudiantes.longitud())
+    Estudiantes.vaciar()
 
-Estudiantes.eliminar("Daniel Felipe")
-Estudiantes.imprimir()
-print(Estudiantes.longitud())
-Estudiantes.eliminarNodo(1)
-Estudiantes.imprimir()
-print(Estudiantes.longitud())
-print(Estudiantes.buscar(4))
-print(Estudiantes.obtener_id("Diddy"))
-print(Estudiantes.editarDato_id("Epstein", 4))
-Estudiantes.imprimir()
-# print(Estudiantes.longitud())
-
-#Para entender que cada Nodo lo puedo crear y que cada nodo tiene
-#Su siguiente que se debe asignar al siguiente valor
-
-# n1 = Node(4)
-# n2 = Node(5)
-# n3 = Node(6)
-# n4 = Node(7)
-
-# print(id(n1))
-# print(id(n2))
-
-# n1.next = n2
-
-# print("_______________")
-# print(id(n1.next))
-# print(id(n2))
-
+    Estudiantes.imprimir()
