@@ -1,3 +1,7 @@
+#STACK -> PILAS
+#estructura de datos que sigue el principio LIFO
+#LAST IN , FIRST OUT
+
 class Node:
     def __init__(self, data):
         self.data = data
