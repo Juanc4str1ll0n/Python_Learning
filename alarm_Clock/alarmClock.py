@@ -1,4 +1,5 @@
-import time, datetime, pygame
+import time, datetime
+from pygame import mixer as pygame
 
 def setAlarm(alarm_time):
     print(f"Alarm set for { alarm_time}")

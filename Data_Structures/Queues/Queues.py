@@ -69,7 +69,6 @@ class Queue:
             print("Dato no encontrado")
 
 
-
     def desencolar(self):
         """Elimina el primer valor y lo retorna"""
         if self.cabeza == None:
