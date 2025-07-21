@@ -157,9 +157,10 @@ class DoublyLinkedList:
             actual = actual.siguiente
             index += 1
 
-        nuevo.anterior = actual.anterior
+        nuevo.anterior = actual.anterior        #Las dos referencias del nuevo
         nuevo.siguiente = actual
-        actual.anterior.siguiente = nuevo
+
+        actual.anterior.siguiente = nuevo      #Las dos referencias del actual
         actual.anterior = nuevo
 
     def clear(self):
