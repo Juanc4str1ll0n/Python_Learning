@@ -186,20 +186,20 @@ class Deque:
                 
         
                     
-estudiantes = Deque()
+# estudiantes = Deque()
 
-estudiantes.append("Juan")
-estudiantes.append("David")
-estudiantes.appendLeft("Maria")
-estudiantes.appendLeft("Mario")
+# estudiantes.append("Juan")
+# estudiantes.append("David")
+# estudiantes.appendLeft("Maria")
+# estudiantes.appendLeft("Mario")
 
-estudiantes.print()
+# estudiantes.print()
 
-# estudiantes.pop()
-# estudiantes.popLeft()
-estudiantes.print()
+# # estudiantes.pop()
+# # estudiantes.popLeft()
+# estudiantes.print()
 
-estudiantes.reverse()
-estudiantes.print()
+# estudiantes.reverse()
+# estudiantes.print()
 
-print(estudiantes.search("juanito el golondrina"))
+# print(estudiantes.search("juanito el golondrina"))
