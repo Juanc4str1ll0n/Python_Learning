@@ -47,7 +47,7 @@ class MinHeap:
             
             if menor != indice:        #Si el menor se cambio de lugar
                 self.heap[indice], self.heap[menor] = self.heap[menor], self.heap[indice] 
-                 
+                indice = menor 
             else:   #Ya esta en su lugar
                 break
     
@@ -69,7 +69,7 @@ class MinHeap:
         
         return len(self.heap)
     
-    def estaVacio(self):
+    def estaVacio(self) -> bool:
         return len(self.heap) == 0
     
     

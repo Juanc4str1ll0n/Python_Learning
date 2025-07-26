@@ -17,8 +17,6 @@ class maxHeap:
                 break
             
     def eliminarMax(self):
-        
-        
         if len(self.heap) == 0:
             return None
         
