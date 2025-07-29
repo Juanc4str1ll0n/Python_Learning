@@ -194,8 +194,56 @@ class BinaryTree:
         return (diferencia <= 1 and self._es_balanceado_recursivo(nodo.izquierdo) and self._es_balanceado_recursivo(nodo.derecho))
     
     def aListaOrdenada(self):
-        pass
-    
+        return self._aListaOrdenada(self.raiz)
+
+    def _aListaOrdenada(self, nodo):
+        if nodo is None:
+            return []
+
+        izquierda = self._aListaOrdenada(nodo.izquierdo)
+        centro = [nodo.valor]
+        derecha = self._aListaOrdenada(nodo.derecho)
+
+        return izquierda + centro + derecha
+
+    def eliminar(self, valor):
+        self.raiz = self._eliminar_recursivo(self.raiz, valor)
+        #Actualizamos la raiz si es necesario con la llamada recursiva a eliminar desde la raiz un cierto valor.
+        
+    def _eliminar_recursivo(self, nodo, valor):
+        if nodo is None:
+            return None
+
+        if valor < nodo.valor:
+            nodo.izquierdo = self._eliminar_recursivo(nodo.izquierdo, valor)
+            #Actualizamos el izquierdo con recursividad si es menor
+        elif valor > nodo.valor:
+            nodo.derecho = self._eliminar_recursivo(nodo.derecho, valor)
+            #Actualizamos derecho con recursividad si es mayor
+            
+        else:
+            # Nodo encontrado
+            if nodo.izquierdo is None and nodo.derecho is None:
+                return None  # caso 1: hoja
+            elif nodo.izquierdo is None:
+                return nodo.derecho  # caso 2: un hijo derecho
+            elif nodo.derecho is None:
+                return nodo.izquierdo  # caso 2: un hijo izquierdo
+            else:
+                # caso 3: dos hijos
+                sucesor = self._minimo(nodo.derecho)
+                nodo.valor = sucesor.valor
+                nodo.derecho = self._eliminar_recursivo(nodo.derecho, sucesor.valor)
+
+        return nodo
+
+
+    def _minimo(self, nodo):
+        while nodo.izquierdo is not None:
+            nodo = nodo.izquierdo
+        return nodo
+
+        
     
 arbolito = BinaryTree()
 
@@ -222,3 +270,10 @@ arbolito.postorden()
 
 # print(arbolito.altura())
 print(arbolito.es_balanceado())
+
+listaArbolito = arbolito.aListaOrdenada()
+print(listaArbolito)
+
+arbolito.eliminar(90)
+print("--------------")
+arbolito.inorden()
