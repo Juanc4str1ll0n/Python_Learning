@@ -1,0 +1,108 @@
+{
+  "Valor": 38,
+  "Hijos": [
+    {
+      "Valor": 15,
+      "Hijos": [
+        {
+          "Valor": 8,
+          "Hijos": []
+        },
+        {
+          "Valor": 9,
+          "Hijos": [
+            {
+              "Valor": 10,
+              "Hijos": []
+            },
+            {
+              "Valor": 11,
+              "Hijos": []
+            },
+            {
+              "Valor": 12,
+              "Hijos": []
+            }
+          ]
+        },
+        {
+          "Valor": 22,
+          "Hijos": []
+        },
+        {
+          "Valor": 23,
+          "Hijos": []
+        },
+        {
+          "Valor": 31,
+          "Hijos": []
+        }
+      ]
+    },
+    {
+      "Valor": 20,
+      "Hijos": [
+        {
+          "Valor": 25,
+          "Hijos": []
+        },
+        {
+          "Valor": 26,
+          "Hijos": []
+        }
+      ]
+    },
+    {
+      "Valor": 30,
+      "Hijos": [
+        {
+          "Valor": 32,
+          "Hijos": []
+        },
+        {
+          "Valor": 34,
+          "Hijos": []
+        },
+        {
+          "Valor": 36,
+          "Hijos": []
+        }
+      ]
+    },
+    {
+      "Valor": 40,
+      "Hijos": [
+        {
+          "Valor": 41,
+          "Hijos": []
+        },
+        {
+          "Valor": 42,
+          "Hijos": []
+        },
+        {
+          "Valor": 43,
+          "Hijos": [
+            {
+              "Valor": 50,
+              "Hijos": []
+            },
+            {
+              "Valor": 51,
+              "Hijos": [
+                {
+                  "Valor": 52,
+                  "Hijos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Valor": 44,
+          "Hijos": []
+        }
+      ]
+    }
+  ]
+}
