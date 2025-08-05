@@ -24,6 +24,26 @@ def binarySearch(lista: list, objetivo):
     print("Elemento no encontrado")
         
 #Version recursiva
+def recursiveBinarySearch(lista:list, objetivo):
+    return _recursiveBinarySearch(lista, objetivo, 0, len(lista)-1)
+
+def _recursiveBinarySearch(lista:list, objetivo, izq, dere):
+    if izq > dere:
+        return 
+    
+    middle = (dere - izq) // 2
+    middlePosition = lista[middle]
+    
+    if objetivo == middlePosition:
+        return middlePosition
+    
+    elif objetivo < middlePosition:
+        return recursiveBinarySearch(lista, objetivo, izq, middle - 1)
+    
+    elif objetivo > middlePosition:
+        return recursiveBinarySearch(lista, objetivo, middle +1, dere )
+
+
 
 lista = []
 for i in range(1000000):

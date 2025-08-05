@@ -234,7 +234,6 @@ class BinaryTree:
                 sucesor = self._minimo(nodo.derecho)
                 nodo.valor = sucesor.valor
                 nodo.derecho = self._eliminar_recursivo(nodo.derecho, sucesor.valor)
-
         return nodo
 
 
