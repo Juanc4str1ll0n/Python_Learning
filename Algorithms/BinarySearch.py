@@ -46,11 +46,11 @@ def _recursiveBinarySearch(lista:list, objetivo, izq, dere):
 
 
 lista = []
-for i in range(1000000):
+for i in range(10000000):
     lista.append(i)
 
 Start = time.time()   #Midiendo el tiempo
-print(binarySearch(lista, 999999))
+print(binarySearch(lista, 9999999))
 End = time.time()    #Midiendo el tiempo
 
 print(End - Start)

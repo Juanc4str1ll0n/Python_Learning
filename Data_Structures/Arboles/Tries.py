@@ -11,7 +11,6 @@
 # - Corrección ortográfica
 # - Búsqueda por prefijos
 # - Compresión de datos en algunas variantes
-from collections import deque
 
 class Node:
     def __init__(self):
@@ -36,9 +35,9 @@ class Trie:
         actual.esFinal = True
         self.size +=1          
     
-    def buscar(self, palabra:str):
+    def buscar(self, palabra:str) -> bool:
         if not palabra:
-            return 
+            return False
         
         actual = self.raiz
         for letra in palabra:
@@ -105,18 +104,28 @@ class Trie:
             self.__DFS2(node, camino + letra, resultado)
         
     def eliminar(self, palabra):
-        if not self.raiz.hijos:
+        if not self.buscar(palabra):
             return
-        self.__eliminar(self.raiz, palabra)
-    
-    #PARA MANANA
-    # def __eliminar(self, nodo, palabra):
-        
-    #     for letra in palabra:
-    #         if letra in nodo.hijos:
-                
-        
-    
+        self.__eliminar(self.raiz, palabra, 0)
+
+    def __eliminar(self, nodo, palabra, index):
+            
+            if len(palabra == index):
+                nodo.esFinal = False
+                return len(nodo.hijos) == 0
+
+            letra = palabra[index]
+            if letra not in nodo.hijos:
+                return False
+            
+            nodo_hijo = nodo.hijos[letra]
+            puedeEliminarHijo = self.__eliminar(nodo_hijo, palabra, index + 1)
+            
+            if puedeEliminarHijo:
+                del nodo.hijos[letra]
+                return len(nodo.hijos) == 0 and not nodo.esFinal
+            return False
+            
     def esVacio(self) -> bool:
         return not self.raiz.hijos
     
