@@ -1,10 +1,18 @@
-class Node:
-    def __init__(self):
-        self.hijos = {}
+# class Node:
+#     def __init__(self):
+#         self.hijos = {}
 
-dictionary = {}
+# dictionary = {}
 
-dictionary['g'] = Node()
-dictionary['l'] = Node()
+# dictionary['g'] = Node()
+# dictionary['l'] = Node()
 
-print(dictionary)
+# print(dictionary)
+
+diccionario = {
+    'A':["B", "C"],
+    'B':["A"],
+    "C":["A"]
+}
+
+diccionario["A"].remove()
