@@ -1,14 +1,36 @@
-import pygame
+#Triangulo equilatero
+num = int(input("Proporcione el numero de filas"))
 
-ventana = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Hola Mundo")
+for i in range(num + 1):
+    espacios = ' '*(num - i)
+    estrellas = '*'*(2 * i-1 )
+    print(espacios, estrellas)
+    
+#Triangulo lado derecho
+print("-----------------------------------")
+for i in range(num + 1):
+    estrellas = '*'*(i)
+    print(espacios, estrellas)
 
-run = True
+#Triangulo lado izquierdo 
+print("-----------------------------------")
+for i in range(num + 1):
+    espacios = ' '*(num - i)
+    estrellas = '*'*(i)
+    print(espacios, estrellas)
 
-while run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+#Rombo
+print("-----------------------------------")
 
-    ventana.fill((0, 0, 0))
-    pygame.display.flip()
+# Triángulo de arriba (incluye el centro)
+for i in range(1, num + 1):
+    espacios = ' ' * (num - i)
+    estrellas = '*' * (2 * i - 1)
+    print(espacios + estrellas)
+
+# Triángulo de abajo (sin repetir el centro)
+for i in range(num - 1, 0, -1):
+    espacios = ' ' * (num - i)
+    estrellas = '*' * (2 * i - 1)
+    print(espacios + estrellas)
+
